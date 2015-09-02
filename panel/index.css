@@ -1,0 +1,9 @@
+/*操作面板 panel/index.css*/
+.position-XSS{font-family: 'Segoe UI', Arial, 'Microsoft Yahei', Simsun, sans-serif;font-size: 12px;text-align:left;}
+.position-XSS p{display: block;-webkit-margin-before: 0.5em;-webkit-margin-after: 0.5em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;}
+.position-XSS a:-webkit-any-link {color: -webkit-link;text-decoration: underline;cursor: auto;}
+.position-XSS{z-index: 999999;position: fixed;left: 2px;bottom: 0px;width:300px;background-color:#B1D9F5;_position: absolute;_top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);overflow: visible;}
+.title-XSS{margin:0px;height:33px;line-height: 33px;color: #fff;font-size: 16px;padding-left: 10px;background-color:#DEC17D;}
+.panel-XSS{height:auto;display:block;margin: 8px;}
+.task_show{display:none;}
+.task_finish_show{display:none;}

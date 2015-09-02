@@ -1,0 +1,164 @@
+{
+    "manifest_version": 2,
+    "name": "Manning",
+    "description": "Manning",
+    "version": "0.0.3",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "browser_action": {
+        "default_name": "Manning",
+        "default_icon": "icon.png",
+        "default_title": "Manning",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "func/jquery-2.1.0.min.js",
+            "func/cls_api.js",
+            "func/dama.js",
+            "func/storage.func.js",
+            "func/background.func.js",
+            "config/common.js",
+            "config/background.js",
+            "background.js"
+        ]
+    },
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["*://*/*"],
+            "js": [
+                "func/jquery-2.1.0.min.js",
+                "config/background.js",
+                "panel/index.js"
+            ],
+            "css": ["panel/index.css"],
+            "all_frames": false
+        },
+        {
+            "//": "注入公用文件",
+            "run_at": "document_end",
+            "all_frames": true,
+            "matches": [
+                "*://*.boc.cn/*",
+                "*://*.icbc.com.cn/*",
+                "*://*.yhd.com/*",
+                "*://*.jd.com/*",
+                "*://*.baidu.com/*"
+            ],
+            "js": [
+                "func/jquery-2.1.0.min.js",
+                "func/async.js",
+                "func/dama.js",
+                "func/cls_api.js",
+                "config/common.js",
+                "func/common.func.js",
+                "alertify/alertify.min.js"
+            ],
+            "css": [
+                "alertify/alertify.core.css",
+                "alertify/alertify.default.css"
+            ]
+        },
+
+        {
+            //京东 登录页面
+            "run_at": "document_end",
+            "matches": [
+                "*://passport.jd.com/uc/login*",
+                "*://passport.jd.com/new/login.aspx*"
+            ],
+            "js": ["jd/login.js"],
+            "all_frames": true
+        },
+        {
+            //京东弹出登录窗口
+            "run_at": "document_end",
+            "matches": ["*://passport.jd.com/uc/popupLogin2013*"],
+            "js": ["jd/jd_login.js"],
+            "all_frames": true
+        },
+        {
+            //京东登陆成功 后需要验证手机号
+            "run_at": "document_end",
+            "matches": ["*://safe.jd.com/dangerousVerify/index.action*"],
+            "js": ["jd/jd_safe_verify.js"],
+            "all_frames": true
+        },
+
+        {
+            //京东支付页
+            "run_at": "document_end",
+            "matches": ["*://cashier.jd.com/payment/pay.action*"],
+            "js": ["jd/jd_pay_action.js"],
+            "all_frames": true
+        },
+        {
+            //中行返回京东支付成功页面
+            "run_at": "document_end",
+            "matches": [
+                "*://cashier.jd.com/payment/payResult.action*"
+            ],
+            "js": ["jd/jd_pay_success.js"],
+            "all_frames": true
+        },
+        {
+            //京东订单列表
+            "run_at": "document_end",
+            "matches": ["*://order.jd.com/center/list.action*"],
+            "js": ["jd/list.js"]
+        },
+        {
+            //京东订单详情页面， 确认付款状态，抓取订单信息
+            "run_at": "document_end",
+            "matches": ["*://order.jd.com/normal/item.action*"],
+            "js": ["jd/jd_order_detail.js"],
+            "all_frames": true
+        },
+
+        /******************************************************************银行支付******************************************************************/
+        {
+            //中行
+            "run_at": "document_end",
+            "matches": ["*://ebsnew.boc.cn/BII/PreLoginPGW.do*"],
+            "js": ["pay/boc.js"],
+            "all_frames": true
+        },
+        {
+            //中行
+            "run_at": "document_end",
+            "matches": ["*://ebspay.boc.cn/PGWPortal/RecvOrder.do*"],
+            "js": ["pay/boc_step1.js"],
+            "all_frames": true
+        },
+        {
+            //工行
+            "run_at": "document_end",
+            "matches": [
+                "https://*.icbc.com.cn/servlet/ICBCINBSEBusinessServlet",
+                "https://*.icbc.com.cn/servlet/ICBCINBSReqServlet"
+            ],
+            "js": ["pay/icbc.js"],
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "background",
+        "browsingData",
+        "clipboardRead",
+        "clipboardWrite",
+        "cookies",
+        "notifications",
+        "storage",
+        "webRequest",
+        "webRequestBlocking",
+        "downloads",
+        "contentSettings",
+        "<all_urls>"
+    ]
+}

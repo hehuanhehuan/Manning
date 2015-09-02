@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="func/jquery-2.1.0.min.js"></script>
+    <script src="config/background.js"></script>
+    <script src="popup.js"></script>
+</head>
+<style>
+    .task_show {
+        display: none;
+    }
+
+    .task_finish_show {
+        display: none;
+    }
+</style>
+<body style="width: 400px">
+<div>
+    <p>Manning</p>
+</div>
+<div>
+
+    <p>
+        <!-- <a href="javascript:void(0);" id="tasks-link">任务列表</a>&nbsp;
+        <a href="javascript:void(0);" id="remove-cookies">清除Cookies</a>&nbsp; -->
+        <!-- <a href="javascript:void(0);" id="search_link" class="task_show"> 搜索 </a>&nbsp; -->
+        <span id="task-span"></span>
+        <span id="task_step">
+            <a href="javascript:void(0);" id="client_host_step_timeout">步骤重置</a>
+        </span>
+    </p>
+
+    <p style="">
+        <a href="javascript: void(0);">
+            <input type="checkbox" id="client_host_last_task_order_checkbox" style="vertical-align: middle;"/>
+            <label for="client_host_last_task_order_checkbox">最后一单</label>&nbsp;
+        </a>
+        <a href="javascript:void(0);" id="client_host_status_reset" title="注意：商品数量，重复下单">重新开始(注)</a>&nbsp;
+    </p>
+
+    <p class="task_show">
+        <a href="javascript:void(0);" id="client_task_order_reset" style="display: none;">账号重置</a>&nbsp;
+        <a href="javascript:void(0);" id="client_task_order_exception_reset">订单异常</a>&nbsp;
+        <a href="javascript:void(0);" id="client_host_status_finish" class="task_finish_show"></a>&nbsp;
+    </p>
+</div>
+<div id="task"></div>
+<div>
+    <p>
+        <span id="host_id"></span>&nbsp;
+        <span id="task_order_id"></span>&nbsp;
+        <span id="business_order_id"></span>&nbsp;
+    </p>
+
+    <p>
+        <span id="task_item_id"></span>&nbsp;
+        <span id="task_promotion_url"><a class="promotion" href="javascript:void(0);">首页</a></span>&nbsp;
+        <span id="task_keyword"></span>&nbsp;
+    </p>
+
+    <p>
+        <span id="task_product_name"></span>&nbsp;
+        <span id="task_amount"></span>&nbsp;
+    </p>
+
+    <p><span id="task_username"></span>&nbsp;<span id="task_password"></span>&nbsp;<span id="task_pay_password"></span>
+    </p>
+
+    <p><span id="task_consignee"></span></p>
+</div>
+</body>
+</html>

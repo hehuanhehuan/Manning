@@ -1,0 +1,179 @@
+<html>
+    <head>
+    <meta charset="utf-8" />
+        <title>Manning -设置</title>
+        <script src="func/jquery-2.1.0.min.js"></script>
+        <script src="options.js"></script>
+        <style type="text/css">
+            td{
+                font-size: 12px;
+            }
+            .right{
+                text-align: right;
+            }
+            .input{
+                width: 400px;
+            }
+            .radio{
+                width: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <table>
+            <tr>
+                <td class="right">
+                    插件使用环境:
+                </td>
+                <td>
+                    <select class="input" id="worm_env">
+                        <option value="0">生产环境</option>
+                        <option value="1">测试环境</option>
+                        <option value="2">本地环境</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    用户名(POPTOP后台账号):
+                </td>
+                <td>
+                    <input class="input" type="text" name="worm_username" id="worm_username" style="width:400px;" placeholder="用户名(POPTOP后台账号)"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    密码(POPTOP后台密码):
+                </td>
+                <td>
+                    <input class="input" type="text" name="worm_password" id="worm_password" style="width:400px;" placeholder="密码(POPTOP后台密码)"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    主机编号(例：gd006):
+                </td>
+                <td>
+                    <input class="input" type="text" name="host_id" id="host_id" style="width:400px;" placeholder="主机编号(例：gd006)" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    建行用户名:
+                </td>
+                <td>
+                    <input class="input" type="text" name="ccb_username" id="ccb_username" value="" placeholder="建行用户名" />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="right">
+                   建行密码:
+                </td>
+                <td>
+                    <input class="input" type="password" name="ccb_password" id="ccb_password" value="" placeholder="建行密码" />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="right">
+                    中行用户名:
+                </td>
+                <td>
+                    <input class="input" type="text" name="boc_username" id="boc_username" value="" placeholder="中行用户名" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">中行密码:</td>
+                <td><input class="input" type="text" name="boc_password" id="boc_password" value="" placeholder="中行密码" /></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="right">
+                    招行手机号码:
+                </td>
+                <td>
+                    <input class="input" type="text" name="cmb_mobile" id="cmb_mobile" value="" placeholder="招行手机号码" />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="right">
+                    招行卡号后四位:
+                </td>
+                <td>
+                    <input class="input" type="text" name="cmb_paycard" id="cmb_paycard" value="" placeholder="招行卡号后四位" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    工商银行卡（账）号:
+                </td>
+                <td>
+                    <input class="input" type="text" name="icbc_paycard" id="icbc_paycard" value="" placeholder="工商银行卡（账）号" />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="right">
+                    选择支付银行:
+                </td>
+                <td style="width:400px;">
+                    <input class="input radio" type="radio" id="bank_null" name="bank" value="null"  />
+                    <label for="bank_null">手动选择</label>&nbsp;
+                    <input class="input radio" type="radio" id="bank_ccb" name="bank" value="ccb"  />
+                    <label for="bank_ccb">建设银行</label>&nbsp;
+                    <input class="input radio" type="radio" id="bank_boc" name="bank" value="boc" checked/>
+                    <label for="bank_boc">中国银行</label>&nbsp;
+                    <input class="input radio" type="radio" id="bank_cmb" name="bank" value="cmb" />
+                    <label for="bank_cmb">招商银行</label>&nbsp;
+                    <input class="input radio" type="radio" id="bank_icbc" name="bank" value="icbc" />
+                    <label for="bank_icbc">工商银行</label>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    银行自动登陆:
+                </td>
+                <td style="width:400px;">
+                    <input class="" type="checkbox" id="autologin_boc" name="autologin_boc" value="boc" />
+                    <label for="autologin_boc">中行</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="right">
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                
+                </td>
+                <td>
+                    <br/>
+                    <input class="input" type="button" value="保存设置" id="btnSave" />
+                </td>
+            </tr>
+
+
+        </table>
+        <div>
+             <p></p>
+            <textarea style="width:740px;height:320px;">
+
+
+            </textarea>
+        </div>
+    </body>
+</html>
