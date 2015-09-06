@@ -206,39 +206,89 @@ var _host_step_action_url = {
     1: {
         "jd": [
             "https://passport.jd.com/new/login.aspx?ReturnUrl=http%3A%2F%2Feasybuy.jd.com%2Faddress%2FgetEasyBuyList.action",
+            "https://passport.jd.com/new/login.aspx?ReturnUrl=http%3A%2F%2Feasybuy.jd.com%2Faddress%2FgetEasyBuyList.action",
             "https://passport.jd.com/new/login.aspx?ReturnUrl=http%3A%2F%2Feasybuy.jd.com%2Faddress%2FgetEasyBuyList.action"
         ],
         "yhd": [
+            "https://passport.yhd.com/passport/login_input.do?returnUrl=http%3A%2F%2Fmy.yhd.com%2Fmember%2Faddress%2FaddressBook.do",
             "https://passport.yhd.com/passport/login_input.do?returnUrl=http%3A%2F%2Fmy.yhd.com%2Fmember%2Faddress%2FaddressBook.do",
             "https://passport.yhd.com/passport/login_input.do?returnUrl=http%3A%2F%2Fmy.yhd.com%2Fmember%2Faddress%2FaddressBook.do"
         ]
     },
     2: {
-        "jd": ["http://easybuy.jd.com/address/getEasyBuyList.action", "http://easybuy.jd.com/address/getEasyBuyList.action"],
-        "yhd": ["http://my.yhd.com/member/address/addressBook.do", "http://my.yhd.com/member/address/addressBook.do"]
+        "jd": [
+            "http://easybuy.jd.com/address/getEasyBuyList.action",
+            "http://easybuy.jd.com/address/getEasyBuyList.action",
+            "http://easybuy.jd.com/address/getEasyBuyList.action"
+        ],
+        "yhd": [
+            "http://my.yhd.com/member/address/addressBook.do",
+            "http://my.yhd.com/member/address/addressBook.do",
+            "http://my.yhd.com/member/address/addressBook.do"
+        ]
     },
     3: {
         "jd": ["{promotion_url}"],
         "yhd": ["{promotion_url}"]
     },
     4: {
-        "jd": ["http://item.jd.com/{item_id}.html", "http://item.m.jd.com/product/{item_id}.html"],
-        "yhd": ["http://item.yhd.com/item/{item_id}", "http://item.m.yhd.com/item/{item_id}"]
+        "jd": [
+            "http://item.jd.com/{item_id}.html",
+            "http://item.m.jd.com/product/{item_id}.html",
+            "http://item.m.jd.com/product/{item_id}.html"
+        ],
+        "yhd": [
+            "http://item.yhd.com/item/{item_id}",
+            "http://item.m.yhd.com/item/{item_id}",
+            "http://item.m.yhd.com/item/{item_id}"
+        ]
     },
     5: {
-        "jd": ["http://cart.jd.com/cart/cart.html", "http://p.m.jd.com/cart/cart.action"],
-        "yhd": ["http://cart.yhd.com/cart/cart.do", "http://cart.m.yhd.com/cart/showCart"]
+        "jd": [
+            "http://cart.jd.com/cart/cart.html",
+            "http://p.m.jd.com/cart/cart.action",
+            "http://p.m.jd.com/cart/cart.action"
+        ],
+        "yhd": [
+            "http://cart.yhd.com/cart/cart.do",
+            "http://cart.m.yhd.com/cart/showCart",
+            "http://cart.m.yhd.com/cart/showCart"
+        ]
     },
     6: {
-        "jd": ["http://trade.jd.com/shopping/order/getOrderInfo.action", "http://p.m.jd.com/norder/order.action"],
-        "yhd": ["http://buy.yhd.com/checkoutV3/index.do", "http://buy.m.yhd.com/checkout/order.do"]
+        "jd": [
+            "http://trade.jd.com/shopping/order/getOrderInfo.action",
+            "http://p.m.jd.com/norder/order.action",
+            "http://p.m.jd.com/norder/order.action"
+        ],
+        "yhd": [
+            "http://buy.yhd.com/checkoutV3/index.do",
+            "http://buy.m.yhd.com/checkout/order.do",
+            "http://buy.m.yhd.com/checkout/order.do"
+        ]
     },
     7: {
-        "jd": ["http://order.jd.com/center/list.action", "http://order.jd.com/center/list.action"],
-        "yhd": ["http://my.yhd.com/order/myOrder.do", "http://my.yhd.com/order/myOrder.do"]
+        "jd": [
+            "http://order.jd.com/center/list.action",
+            "http://order.jd.com/center/list.action",
+            "http://order.jd.com/center/list.action"
+        ],
+        "yhd": [
+            "http://my.yhd.com/order/myOrder.do",
+            "http://my.yhd.com/order/myOrder.do",
+            "http://my.yhd.com/order/myOrder.do"
+        ]
     },
     8: {
-        "jd": ["http://order.jd.com/center/list.action", "http://order.jd.com/center/list.action"],
-        "yhd": ["http://my.yhd.com/order/myOrder.do", "http://my.yhd.com/order/myOrder.do"]
+        "jd": [
+            "http://order.jd.com/center/list.action",
+            "http://order.jd.com/center/list.action",
+            "http://order.jd.com/center/list.action"
+        ],
+        "yhd": [
+            "http://my.yhd.com/order/myOrder.do",
+            "http://my.yhd.com/order/myOrder.do",
+            "http://my.yhd.com/order/myOrder.do"
+        ]
     }
 };

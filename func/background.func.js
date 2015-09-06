@@ -458,15 +458,24 @@ function getTask() {
             var get_task_use_time = get_task_end_time - get_task_start_time;
             notify("自动领单耗时："+get_task_use_time+"毫秒");
             if (webTask.success == 1) {
+                var task_data = webTask.data;
+                if(task_data && task_data.task_id){
+                    setHostStep(_host_step.check_address_login);//主机步骤
+                    setHostStatus(1202000);//得到服务器任务
+                    var task = webTask.data;
 
-                setHostStep(_host_step.check_address_login);//主机步骤
-                setHostStatus(1202000);//得到服务器任务
-                var task = webTask.data;
-
-                setLocal({"task": task}, function(){
-                    beginTask(task);
-                });
-
+                    setLocal({"task": task}, function(){
+                        beginTask(task);
+                    });
+                }else{
+                    //无任务
+                    console.log(webTask.message);
+                    notify(webTask.message+"，10秒后重新领任务");
+                    setLocal({host_status: 1202001}, function () {
+                        GetTaskStatus = false;
+                        setTimeout(getTask, 10000);
+                    });
+                }
             } else {
                 //请求服务器任务失败
                 console.log(webTask.message);
@@ -625,11 +634,16 @@ function watchDogTimeOut(){
             return false;
         }
 
+        console.log("step" + step);
+        console.log("task.business_slug" + task.business_slug);
+        console.log("task.is_mobile" + task.is_mobile);
         action_url = _host_step_action_url[step][task.business_slug][task.is_mobile];
 
         if(step == 3){
+            console.log("task.promotion_url" + task.promotion_url);
             action_url = task.promotion_url;
         }else if(step == 4){
+            console.log("task.item_id" + task.item_id);
             action_url = action_url.replace('{item_id}', task.item_id);
         }
 
@@ -658,6 +672,7 @@ function watchDogTimeOut(){
 /**
  * 保存平台用户cookie到远程服务器
  * @param domain
+ * @param callback
  */
 function saveUserCookiesToRemote(domain, callback){
     console.log("set cookies", domain);
