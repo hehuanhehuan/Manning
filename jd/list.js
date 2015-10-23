@@ -36,7 +36,7 @@ function orderPay(){
             console.log(pay_btn.innerHTML);
             pay_btn.click();
         }else{
-
+            goOrderDetail();
         }
     }else{
         orderPayNew();
@@ -53,9 +53,21 @@ function orderPayNew(){
             console.log(pay_btn.innerHTML);
             pay_btn.click();
         }else{
-
+            goOrderDetail();
         }
     }else{
-
+        goOrderDetail();
     }
+}
+
+function goOrderDetail(){
+    var order_id_links = $('#idUrl' + order_id);
+    if(order_id_links.length > 0){
+        order_id_links[0].click();
+    }else{
+        setTimeout(function () {
+            window.location.reload(true);
+        },10000);
+    }
+
 }

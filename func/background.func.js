@@ -509,7 +509,7 @@ function beginTask(task){
     }
     StartTaskOpenUrl = true;
     var list_action = {
-      jd:'http://order.jd.com/center/list.action',
+      jd:'http://order.jd.com/center/list.action'
     };
     ////得到任务 操作 任务正常
     //var create_url = task.promotion_url;
@@ -597,9 +597,9 @@ function watchDogTimer(){
                     //超时3次，不处理，，，，
                     //watchdog_timeout_count = 0;
                     last_watchdog_time = new Date().getTime();
-                    console.log("当前超时已多于三次不再处理");
-                    notify("当前超时已多于三次不再处理");
-
+                    console.log("当前超时已多于三次");
+                    notify("当前超时已多于三次");
+                    timeoutReset();
                 } else {
                     watchDogTimeOut();
 
@@ -616,6 +616,27 @@ function watchDogTimer(){
 
         setTimeout(watchDogTimer, 3000);
     })
+}
+
+function timeoutReset(){
+    chrome.tabs.create({url:'http://order.jd.com/center/list.action',selected:true}, function(tab){
+        console.log(tab);
+        chrome.tabs.query({}, function(tabs) {
+            if(tabs){
+                for(var i=0;i<tabs.length;i++){
+                    var remove_tab = tabs[i];
+                    if(remove_tab.id == tab.id){
+
+                    }else{
+                        chrome.tabs.remove(remove_tab.id, function () {
+
+                        });
+                    }
+
+                }
+            }
+        });
+    });
 }
 
 /**

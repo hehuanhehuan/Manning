@@ -205,9 +205,9 @@ var _MobileUserAgent = [
 var _host_step_action_url = {
     1: {
         "jd": [
-            "https://passport.jd.com/new/login.aspx?ReturnUrl=http%3A%2F%2Feasybuy.jd.com%2Faddress%2FgetEasyBuyList.action",
-            "https://passport.jd.com/new/login.aspx?ReturnUrl=http%3A%2F%2Feasybuy.jd.com%2Faddress%2FgetEasyBuyList.action",
-            "https://passport.jd.com/new/login.aspx?ReturnUrl=http%3A%2F%2Feasybuy.jd.com%2Faddress%2FgetEasyBuyList.action"
+            "https://passport.jd.com/new/login.aspx?ReturnUrl=http://order.jd.com/center/list.action",
+            "https://passport.jd.com/new/login.aspx?ReturnUrl=http://order.jd.com/center/list.action",
+            "https://passport.jd.com/new/login.aspx?ReturnUrl=http://order.jd.com/center/list.action"
         ],
         "yhd": [
             "https://passport.yhd.com/passport/login_input.do?returnUrl=http%3A%2F%2Fmy.yhd.com%2Fmember%2Faddress%2FaddressBook.do",
@@ -217,9 +217,9 @@ var _host_step_action_url = {
     },
     2: {
         "jd": [
-            "http://easybuy.jd.com/address/getEasyBuyList.action",
-            "http://easybuy.jd.com/address/getEasyBuyList.action",
-            "http://easybuy.jd.com/address/getEasyBuyList.action"
+            "http://order.jd.com/center/list.action",
+            "http://order.jd.com/center/list.action",
+            "http://order.jd.com/center/list.action"
         ],
         "yhd": [
             "http://my.yhd.com/member/address/addressBook.do",
